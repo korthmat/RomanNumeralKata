@@ -10,8 +10,8 @@ namespace RomanNumeralKata
     {
         public string ToRoman(int arabicNumber)
         {
-            if (arabicNumber < 0)
-                throw new ArgumentOutOfRangeException("arabicNumber", arabicNumber, "A negative Arabic number cannot be converted to Roman numerals.");
+            if (arabicNumber <= 0)
+                throw new ArgumentOutOfRangeException("arabicNumber", arabicNumber, "A zero or negative Arabic number cannot be converted to Roman numerals.");
 
             return null;
         }

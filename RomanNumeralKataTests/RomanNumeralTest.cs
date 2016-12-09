@@ -14,5 +14,13 @@ namespace RomanNumeralKataTests
             RomanNumeral roman = new RomanNumeral();
             roman.ToRoman(-1);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void WhenConvertingToRomanZeroThrowsOutOfRange()
+        {
+            RomanNumeral roman = new RomanNumeral();
+            roman.ToRoman(0);
+        }
     }
 }
