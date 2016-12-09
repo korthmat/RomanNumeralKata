@@ -129,5 +129,14 @@ namespace RomanNumeralKataTests
             Assert.AreEqual("MLXVI", _roman.ToRoman(1066));
             Assert.AreEqual("MCMLXXXIX", _roman.ToRoman(1989));
         }
+
+        [TestMethod]
+        public void WhenConvertingToArabicNullOrBlankOrWhiteSpaceIsZero()
+        {
+            Assert.AreEqual(0, _roman.ToArabic(null));
+            Assert.AreEqual(0, _roman.ToArabic(String.Empty));
+            Assert.AreEqual(0, _roman.ToArabic("   "));
+            Assert.AreEqual(0, _roman.ToArabic("\t"));
+        }
     }
 }

@@ -7,6 +7,8 @@ namespace RomanNumeralKata
 {
     public class RomanNumeral
     {
+        #region ToRoman
+
         private static readonly Dictionary<int, string> _arabicToRomanLookup = new Dictionary<int, string>()
         {
             { 1, "I" },
@@ -68,5 +70,16 @@ namespace RomanNumeralKata
 
             return romanNumeral.ToString();
         }
+
+        #endregion
+
+        #region ToArabic
+
+        public int ToArabic(string romanNumeral)
+        {
+            return 0;
+        }
+
+        #endregion
     }
 }
