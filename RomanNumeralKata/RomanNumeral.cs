@@ -18,7 +18,12 @@ namespace RomanNumeralKata
                     "An Arabic number must be between 1 and 3999 to be converted to Roman numerals.");
             }
 
-            return "I";
+            if (arabicNumber == 1)
+                return "I";
+            else if (arabicNumber == 5)
+                return "V";
+
+            return null;
         }
     }
 }
