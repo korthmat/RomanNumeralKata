@@ -9,21 +9,21 @@ namespace RomanNumeralKata
     {
         #region ToRoman
 
-        private static readonly Dictionary<int, string> _arabicToRomanLookup = new Dictionary<int, string>()
+        private static readonly List<ArabicToRomanConversion> _arabicToRomanLookup = new List<ArabicToRomanConversion>()
         {
-            { 1, "I" },
-            { 4, "IV" },
-            { 5, "V" },
-            { 9, "IX" },
-            { 10, "X" },
-            { 40, "XL" },
-            { 50, "L" },
-            { 90, "XC" },
-            { 100, "C" },
-            { 400, "CD" },
-            { 500, "D" },
-            { 900, "CM" },
-            { 1000, "M" }
+            new ArabicToRomanConversion(1, "I"),
+            new ArabicToRomanConversion(4, "IV"),
+            new ArabicToRomanConversion(5, "V"),
+            new ArabicToRomanConversion(9, "IX"),
+            new ArabicToRomanConversion(10, "X"),
+            new ArabicToRomanConversion(40, "XL"),
+            new ArabicToRomanConversion(50, "L"),
+            new ArabicToRomanConversion(90, "XC"),
+            new ArabicToRomanConversion(100, "C"),
+            new ArabicToRomanConversion(400, "CD"),
+            new ArabicToRomanConversion(500, "D"),
+            new ArabicToRomanConversion(900, "CM"),
+            new ArabicToRomanConversion(1000, "M")
         };
 
         public string ToRoman(int arabicNumber)
@@ -57,14 +57,14 @@ namespace RomanNumeralKata
              *     0    MCMLXXIII
              */
             StringBuilder romanNumeral = new StringBuilder();
-            foreach (int value in _arabicToRomanLookup.Keys.OrderByDescending(v => v))
+            foreach (ArabicToRomanConversion conversion in _arabicToRomanLookup.OrderByDescending(arc => arc.Arabic))
             {
-                int numValues = arabicNumber / value;
+                int numValues = arabicNumber / conversion.Arabic;
                 if (numValues > 0)
                 {
                     for (int i = 0; i < numValues; ++i)
-                        romanNumeral.Append(_arabicToRomanLookup[value]);
-                    arabicNumber -= value * numValues;
+                        romanNumeral.Append(conversion.Roman);
+                    arabicNumber -= conversion.Arabic * numValues;
                 }
             }
 
