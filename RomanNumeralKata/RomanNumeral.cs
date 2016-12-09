@@ -8,6 +8,13 @@ namespace RomanNumeralKata
 {
     public class RomanNumeral
     {
+        private static readonly Dictionary<int, string> _arabicToRomanLookup = new Dictionary<int, string>()
+        {
+            { 1, "I" },
+            { 5, "V" },
+            { 10, "X" }
+        };
+
         public string ToRoman(int arabicNumber)
         {
             if (arabicNumber <= 0 || arabicNumber >= 4000)
@@ -18,12 +25,9 @@ namespace RomanNumeralKata
                     "An Arabic number must be between 1 and 3999 to be converted to Roman numerals.");
             }
 
-            if (arabicNumber == 1)
-                return "I";
-            else if (arabicNumber == 5)
-                return "V";
-            else if (arabicNumber == 10)
-                return "X";
+            string romanNumeral = null;
+            if (_arabicToRomanLookup.TryGetValue(arabicNumber, out romanNumeral))
+                return romanNumeral;
 
             return null;
         }
