@@ -1,0 +1,1 @@
+devenv.exe RomanNumeralKata.sln /Rebuild

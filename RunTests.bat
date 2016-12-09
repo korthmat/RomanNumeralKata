@@ -1,0 +1,1 @@
+mstest /testcontainer:RomanNumeralKataTests\bin\Debug\RomanNumeralKataTests.dll
