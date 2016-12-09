@@ -1,0 +1,18 @@
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RomanNumeralKata;
+
+namespace RomanNumeralKataTests
+{
+    [TestClass]
+    public class RomanNumeralTest
+    {
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void WhenConvertingToRomanNegativeArabicNumbersThrowOutOfRange()
+        {
+            RomanNumeral roman = new RomanNumeral();
+            roman.ToRoman(-1);
+        }
+    }
+}
