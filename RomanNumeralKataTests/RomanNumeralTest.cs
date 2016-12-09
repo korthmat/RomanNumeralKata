@@ -41,5 +41,11 @@ namespace RomanNumeralKataTests
         {
             _roman.ToRoman(4000);
         }
+
+        [TestMethod]
+        public void WhenConvertingToRoman1BecomesI()
+        {
+            Assert.AreEqual("I", _roman.ToRoman(1));
+        }
     }
 }
