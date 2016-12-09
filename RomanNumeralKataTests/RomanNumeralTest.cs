@@ -152,9 +152,75 @@ namespace RomanNumeralKataTests
         }
 
         [TestMethod]
+        public void WhenConvertingToArabicIVBecomes4()
+        {
+            Assert.AreEqual(4, _roman.ToArabic("IV"));
+        }
+
+        [TestMethod]
         public void WhenConvertingToArabicVBecomes5()
         {
             Assert.AreEqual(5, _roman.ToArabic("V"));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToArabicIXBecomes9()
+        {
+            Assert.AreEqual(9, _roman.ToArabic("IX"));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToArabicXBecomes10()
+        {
+            Assert.AreEqual(10, _roman.ToArabic("X"));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToArabicXLBecomes40()
+        {
+            Assert.AreEqual(40, _roman.ToArabic("XL"));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToArabicLBecomes50()
+        {
+            Assert.AreEqual(50, _roman.ToArabic("L"));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToArabicXCBecomes90()
+        {
+            Assert.AreEqual(90, _roman.ToArabic("XC"));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToArabicCBecomes100()
+        {
+            Assert.AreEqual(100, _roman.ToArabic("C"));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToArabicCDBecomes400()
+        {
+            Assert.AreEqual(400, _roman.ToArabic("CD"));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToArabicDBecomes500()
+        {
+            Assert.AreEqual(500, _roman.ToArabic("D"));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToArabicCMBecomes900()
+        {
+            Assert.AreEqual(900, _roman.ToArabic("CM"));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToArabicMBecomes1000()
+        {
+            Assert.AreEqual(1000, _roman.ToArabic("M"));
         }
     }
 }
