@@ -65,5 +65,11 @@ namespace RomanNumeralKataTests
         {
             Assert.AreEqual("L", _roman.ToRoman(50));
         }
+
+        [TestMethod]
+        public void WhenConvertingToRoamn100BecomesC()
+        {
+            Assert.AreEqual("C", _roman.ToRoman(100));
+        }
     }
 }
