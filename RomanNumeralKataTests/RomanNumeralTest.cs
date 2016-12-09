@@ -49,9 +49,21 @@ namespace RomanNumeralKataTests
         }
 
         [TestMethod]
+        public void WhenConvertingToRoman4BecomesIV()
+        {
+            Assert.AreEqual("IV", _roman.ToRoman(4));
+        }
+
+        [TestMethod]
         public void WhenConvertingToRoman5BecomesV()
         {
             Assert.AreEqual("V", _roman.ToRoman(5));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToRoman9BecomesIX()
+        {
+            Assert.AreEqual("IX", _roman.ToRoman(9));
         }
 
         [TestMethod]
@@ -61,9 +73,21 @@ namespace RomanNumeralKataTests
         }
 
         [TestMethod]
+        public void WhenConvertingToRoman40BecomesXL()
+        {
+            Assert.AreEqual("XL", _roman.ToRoman(40));
+        }
+
+        [TestMethod]
         public void WhenConvertingToRoman50BecomesL()
         {
             Assert.AreEqual("L", _roman.ToRoman(50));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToRoman90BecomesXC()
+        {
+            Assert.AreEqual("XC", _roman.ToRoman(90));
         }
 
         [TestMethod]
@@ -73,9 +97,21 @@ namespace RomanNumeralKataTests
         }
 
         [TestMethod]
+        public void WhenConvertingToRoman400BecomesCD()
+        {
+            Assert.AreEqual("CD", _roman.ToRoman(400));
+        }
+
+        [TestMethod]
         public void WhenConvertingToRoman500BecomesD()
         {
             Assert.AreEqual("D", _roman.ToRoman(500));
+        }
+
+        [TestMethod]
+        public void WhenConvertingToRoman900BecomesCM()
+        {
+            Assert.AreEqual("CM", _roman.ToRoman(900));
         }
 
         [TestMethod]
