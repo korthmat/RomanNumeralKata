@@ -30,5 +30,13 @@ namespace RomanNumeralKataTests
             RomanNumeral roman = new RomanNumeral();
             roman.ToRoman(4321);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void WhenConvertingToRoman4000ThrowsOutOfRange()
+        {
+            RomanNumeral roman = new RomanNumeral();
+            roman.ToRoman(4000);
+        }
     }
 }
