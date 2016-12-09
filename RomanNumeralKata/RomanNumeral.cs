@@ -22,6 +22,8 @@ namespace RomanNumeralKata
                 return "I";
             else if (arabicNumber == 5)
                 return "V";
+            else if (arabicNumber == 10)
+                return "X";
 
             return null;
         }
