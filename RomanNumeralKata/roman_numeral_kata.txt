@@ -1,4 +1,9 @@
-﻿The Romans wrote their numbers using letters; specifically the letters 'I' meaning '1', 'V' meaning '5', 'X' meaning '10',
+﻿From http://agilekatas.co.uk/katas/romannumerals-kata:
+
+Roman Numerals Kata
+===================
+
+The Romans wrote their numbers using letters; specifically the letters 'I' meaning '1', 'V' meaning '5', 'X' meaning '10',
 'L' meaning '50', 'C' meaning '100', 'D' meaning '500', and 'M' meaning '1000'. There were certain rules that the numerals
 followed which should be observed.
 
@@ -22,6 +27,14 @@ So that I can label my game releases using Roman numerals
     Given I have started the converter
     When I enter $number
     Then $numeral is returned
+
+Test Cases
+Number  Numeral
+   1    I
+   3    III
+   9    IX
+1066    MLXVI
+1989    MCMLXXXIX
 
 Feature 2 - Converting Roman to Arabic
 --------------------------------------

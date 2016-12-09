@@ -35,11 +35,39 @@ namespace RomanNumeralKata
                     "An Arabic number must be between 1 and 3999 to be converted to Roman numerals.");
             }
 
-            string romanNumeral = null;
-            if (_arabicToRomanLookup.TryGetValue(arabicNumber, out romanNumeral))
-                return romanNumeral;
+            /*
+             * Basic strategy here:
+             * - go through the Arabic-to-Roman lookup in reverse order by value (1000 to 1).
+             * - find out how many of that value exists in the Arabic value
+             *      - if 0, move on
+             *      - if > 0,
+             *          - append that many of the appropriate Roman numeral to the output.
+             *          - reduce the value to be converted by the amount you just converted to
+             *              Roman (e.g., if it's 2001 and you just converted 2000 to MM, reduce
+             *              the value to convert by 2000 -> 1)
+             * - when done, return the Roman numeral string
+             * 
+             * This leads to (for example):
+             *  1973
+             *   973    M
+             *    73    MCM
+             *    23    MCML
+             *     3    MCMLXX
+             *     0    MCMLXXIII
+             */
+            StringBuilder romanNumeral = new StringBuilder();
+            foreach (int value in _arabicToRomanLookup.Keys.OrderByDescending(v => v))
+            {
+                int numValues = arabicNumber / value;
+                if (numValues > 0)
+                {
+                    for (int i = 0; i < numValues; ++i)
+                        romanNumeral.Append(_arabicToRomanLookup[value]);
+                    arabicNumber -= value * numValues;
+                }
+            }
 
-            return null;
+            return romanNumeral.ToString();
         }
     }
 }

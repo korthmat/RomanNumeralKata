@@ -119,5 +119,15 @@ namespace RomanNumeralKataTests
         {
             Assert.AreEqual("M", _roman.ToRoman(1000));
         }
+
+        [TestMethod]
+        public void WhenConvertingToRomanRunTestCasesFromKataDefinition()
+        {
+            Assert.AreEqual("I", _roman.ToRoman(1));
+            Assert.AreEqual("III", _roman.ToRoman(3));
+            Assert.AreEqual("IX", _roman.ToRoman(9));
+            Assert.AreEqual("MLXVI", _roman.ToRoman(1066));
+            Assert.AreEqual("MCMLXXXIX", _roman.ToRoman(1989));
+        }
     }
 }
