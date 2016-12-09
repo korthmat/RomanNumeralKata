@@ -9,7 +9,7 @@ namespace RomanNumeralKataTests
     {
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void WhenConvertingToRomanNegativeArabicNumbersThrowOutOfRange()
+        public void WhenConvertingToRomanNegativeNumbersThrowOutOfRange()
         {
             RomanNumeral roman = new RomanNumeral();
             roman.ToRoman(-1);
@@ -22,5 +22,7 @@ namespace RomanNumeralKataTests
             RomanNumeral roman = new RomanNumeral();
             roman.ToRoman(0);
         }
+
+
     }
 }
