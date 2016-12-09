@@ -77,7 +77,12 @@ namespace RomanNumeralKata
 
         public int ToArabic(string romanNumeral)
         {
-            return 0;
+            if (String.IsNullOrWhiteSpace(romanNumeral))
+                return 0;
+            else if (romanNumeral == "I")
+                return 1;
+
+            return -1;
         }
 
         #endregion
