@@ -7,36 +7,39 @@ namespace RomanNumeralKataTests
     [TestClass]
     public class RomanNumeralTest
     {
+        private RomanNumeral _roman;
+
+        public RomanNumeralTest()
+        {
+            _roman = new RomanNumeral();
+        }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void WhenConvertingToRomanNegativeNumbersThrowOutOfRange()
         {
-            RomanNumeral roman = new RomanNumeral();
-            roman.ToRoman(-1);
+            _roman.ToRoman(-1);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void WhenConvertingToRomanZeroThrowsOutOfRange()
         {
-            RomanNumeral roman = new RomanNumeral();
-            roman.ToRoman(0);
+            _roman.ToRoman(0);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void WhenConvertingToRomanGreaterThan4000ThrowsOutOfRange()
         {
-            RomanNumeral roman = new RomanNumeral();
-            roman.ToRoman(4321);
+            _roman.ToRoman(4321);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void WhenConvertingToRoman4000ThrowsOutOfRange()
         {
-            RomanNumeral roman = new RomanNumeral();
-            roman.ToRoman(4000);
+            _roman.ToRoman(4000);
         }
     }
 }
