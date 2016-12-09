@@ -12,6 +12,8 @@ namespace RomanNumeralKata
         {
             if (arabicNumber <= 0)
                 throw new ArgumentOutOfRangeException("arabicNumber", arabicNumber, "A zero or negative Arabic number cannot be converted to Roman numerals.");
+            if (arabicNumber > 4000)
+                throw new ArgumentOutOfRangeException("arabicNumber", arabicNumber, "An Arabic number greater than 4000 cannot be converted to Roman numerals.");
 
             return null;
         }
