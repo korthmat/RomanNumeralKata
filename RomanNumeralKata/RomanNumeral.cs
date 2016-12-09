@@ -81,10 +81,9 @@ namespace RomanNumeralKata
                 return 0;
 
             romanNumeral = romanNumeral.Trim();
-            if (romanNumeral == "I")
-                return 1;
-            else if (romanNumeral == "V")
-                return 5;
+            ArabicToRomanConversion conversion = _arabicToRomanLookup.FirstOrDefault(arc => arc.Roman == romanNumeral);
+            if (conversion != null)
+                return conversion.Arabic;
 
             return -1;
         }
