@@ -151,5 +151,10 @@ namespace RomanNumeralKataTests
             Assert.AreEqual(1, _roman.ToArabic("I"));
         }
 
+        [TestMethod]
+        public void WhenConvertingToArabicVBecomes5()
+        {
+            Assert.AreEqual(5, _roman.ToArabic("V"));
+        }
     }
 }
