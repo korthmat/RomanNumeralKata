@@ -79,7 +79,9 @@ namespace RomanNumeralKata
         {
             if (String.IsNullOrWhiteSpace(romanNumeral))
                 return 0;
-            else if (romanNumeral == "I")
+
+            romanNumeral = romanNumeral.Trim();
+            if (romanNumeral == "I")
                 return 1;
 
             return -1;

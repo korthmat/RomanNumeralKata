@@ -140,9 +140,16 @@ namespace RomanNumeralKataTests
         }
 
         [TestMethod]
+        public void WhenConvertingToArabicLeadingAndTrailingWhiteSpaceIsIgnored()
+        {
+            Assert.AreEqual(1, _roman.ToArabic(" I "));
+        }
+
+        [TestMethod]
         public void WhenConvertingToArabicIBecomes1()
         {
             Assert.AreEqual(1, _roman.ToArabic("I"));
         }
+
     }
 }
