@@ -62,8 +62,7 @@ namespace RomanNumeralKata
                 int numValues = GetNumValues(arabicNumber, conversion.Arabic);
                 if (numValues > 0)
                 {
-                    for (int i = 0; i < numValues; ++i)
-                        romanNumeral.Append(conversion.Roman);
+                    AppendRomanNumeralsToOutput(romanNumeral, conversion.Roman, numValues);
                     arabicNumber -= conversion.Arabic * numValues;
                 }
             }
@@ -74,6 +73,15 @@ namespace RomanNumeralKata
         private int GetNumValues(int arabicNumber, int valueOfRomanNumeral)
         {
             return arabicNumber / valueOfRomanNumeral;
+        }
+
+        private void AppendRomanNumeralsToOutput(
+            StringBuilder outputRomanNumeral,
+            string romanNumeralToAppend,
+            int numNumeralsToAppend)
+        {
+            for (int i = 0; i < numNumeralsToAppend; ++i)
+                outputRomanNumeral.Append(romanNumeralToAppend);
         }
 
         #endregion
