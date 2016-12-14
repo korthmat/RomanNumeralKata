@@ -59,12 +59,9 @@ namespace RomanNumeralKata
             StringBuilder romanNumeral = new StringBuilder();
             foreach (ArabicToRomanConversion conversion in _arabicToRomanLookup.OrderByDescending(arc => arc.Arabic))
             {
-                int numValues = GetNumNumeralsToAppend(arabicNumber, conversion.Arabic);
-                if (numValues > 0)
-                {
-                    AppendRomanNumeralsToOutput(romanNumeral, conversion.Roman, numValues);
-                    arabicNumber = AdjustArabicNumberValue(arabicNumber, conversion.Arabic, numValues);
-                }
+                int numNumeralsToAppend = GetNumNumeralsToAppend(arabicNumber, conversion.Arabic);
+                AppendRomanNumeralsToOutput(romanNumeral, conversion.Roman, numNumeralsToAppend);
+                arabicNumber = AdjustArabicNumberValue(arabicNumber, conversion.Arabic, numNumeralsToAppend);
             }
 
             return romanNumeral.ToString();
