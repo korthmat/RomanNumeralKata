@@ -59,7 +59,7 @@ namespace RomanNumeralKata
             StringBuilder romanNumeral = new StringBuilder();
             foreach (ArabicToRomanConversion conversion in _arabicToRomanLookup.OrderByDescending(arc => arc.Arabic))
             {
-                int numValues = arabicNumber / conversion.Arabic;
+                int numValues = GetNumValues(arabicNumber, conversion.Arabic);
                 if (numValues > 0)
                 {
                     for (int i = 0; i < numValues; ++i)
@@ -69,6 +69,11 @@ namespace RomanNumeralKata
             }
 
             return romanNumeral.ToString();
+        }
+
+        private int GetNumValues(int arabicNumber, int valueOfRomanNumeral)
+        {
+            return arabicNumber / valueOfRomanNumeral;
         }
 
         #endregion
